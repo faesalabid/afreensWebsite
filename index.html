@@ -114,9 +114,10 @@
     <!-- ─── HERO ─── -->
     <section class="hero" id="hero">
       <!-- YouTube Video Background -->
-      <div class="hero__video-wrap">
+      <div class="hero__video-wrap" aria-hidden="true">
         <div id="hero-yt-player"></div>
       </div>
+
       <!-- Poster fallback (shown until video plays) -->
       <img
         src="img/makeup/Four diverse brides in elegant bridal makeup and attire.jpg"
@@ -124,15 +125,88 @@
         class="hero__bg hero__poster"
         loading="eager"
       >
+
       <div class="hero__overlay"></div>
 
-      <div class="hero__content">
-        <p class="hero__label">NJ & NYC</p>
-        <h1 class="hero__title"><span class="hero__title-accent">Bridal</span> Beauty,<br>Crafted for You.</h1>
-        <p class="hero__subtitle">Makeup & henna artistry for brides across North New Jersey and New York City.</p>
-        <div class="hero__ctas">
-          <a href="contact.html" class="btn btn--light">Inquire for Your Date</a>
-          <a href="portfolio.html" class="btn btn--text btn--text-light">View Portfolio →</a>
+      <div class="hero__content hero__content--editorial">
+        <p class="hero__label">Bridal Beauty · NJ & NYC</p>
+
+        <div class="hero__story-card">
+          <p class="hero__story-kicker">Makeup & Henna Artistry</p>
+          <h1 class="hero__title">
+            <span class="editorial-initial editorial-initial--hero">B</span>ridal
+            Beauty,<br>
+            Crafted for You.
+          </h1>
+          <p class="hero__subtitle">Makeup & henna artistry for brides across North New Jersey and New York City.</p>
+
+          <div class="hero__ctas">
+            <a href="contact.html" class="btn btn--filled">Inquire for Your Date</a>
+            <a href="portfolio.html" class="btn--text">View Portfolio <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── THE LATEST / EDITORIAL FEATURES ─── -->
+    <section class="section latest-section" id="latest">
+      <div class="container">
+        <div class="latest-header reveal">
+          <div>
+            <span class="section-header__kicker">Beauty · Art · Bridal</span>
+            <h2><span class="editorial-initial editorial-initial--heading">T</span>he Latest</h2>
+          </div>
+          <a href="portfolio.html" class="latest-header__link">Explore the portfolio <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="latest-grid">
+          <a href="makeup.html" class="latest-card latest-card--feature reveal">
+            <div class="latest-card__image-wrap">
+              <img
+                src="img/makeup/Glamorous makeup look with glowing skin and smoky eye makeup.jpg"
+                alt="Glamorous glowing bridal makeup look by Afreen Fatima"
+                loading="lazy"
+              >
+            </div>
+            <div class="latest-card__meta">
+              <span>Bridal Beauty</span>
+              <span>01</span>
+            </div>
+            <h3>Makeup that feels like you.</h3>
+            <p>Soft glam, polished bridal beauty, and occasion looks designed around your features and your story.</p>
+          </a>
+
+          <a href="henna.html" class="latest-card reveal reveal-delay-1">
+            <div class="latest-card__image-wrap">
+              <img
+                src="img/henna/Elegant Henna Flatlay with WHite BG and Petals and Crystals.jpg"
+                alt="Elegant bridal henna design by Afreen's Henna"
+                loading="lazy"
+              >
+            </div>
+            <div class="latest-card__meta">
+              <span>Henna</span>
+              <span>02</span>
+            </div>
+            <h3>Details worth remembering.</h3>
+            <p>Intricate mehndi created with intention, from classic bridal patterns to personalized designs.</p>
+          </a>
+
+          <a href="about.html" class="latest-card reveal reveal-delay-2">
+            <div class="latest-card__image-wrap">
+              <img
+                src="img/makeup/Makeup artist applying eyeshadow with a brush.jpg"
+                alt="Makeup artist applying eyeshadow during a bridal makeup session"
+                loading="lazy"
+              >
+            </div>
+            <div class="latest-card__meta">
+              <span>Behind the Artistry</span>
+              <span>03</span>
+            </div>
+            <h3>Every detail matters.</h3>
+            <p>From the first brushstroke to the final photograph, every look is thoughtfully considered.</p>
+          </a>
         </div>
       </div>
     </section>
@@ -150,7 +224,7 @@
           </div>
 
           <div class="intro__content reveal-right">
-            <h2>Beauty Is Personal.<br>Your Artistry Should Be Too.</h2>
+            <h2><span class="editorial-initial editorial-initial--heading">B</span>eauty Is Personal.<br>Your Artistry Should Be Too.</h2>
             <p><span class="drop-cap">I</span>’m Afreen, a New Jersey–based makeup and henna artist specializing in bridal and occasion beauty.</p>
             <p>From soft, effortless glam to full bridal looks and intricate henna designs, I create each look around the person wearing it — your features, your style, your outfit, and your story.</p>
             <p>Whether you’re getting ready for your wedding day, a celebration, or simply want to feel your best — my goal is to make you feel confident, beautiful, and completely yourself.</p>
@@ -460,6 +534,7 @@
           disablekb: 1,
           fs: 0,
           playsinline: 1,
+          origin: window.location.origin,
           start: HERO_START,
           loop: 0
         },
@@ -473,6 +548,11 @@
     function onHeroPlayerReady(event) {
       event.target.mute();
       event.target.seekTo(HERO_START, true);
+
+      // YouTube now selects playback quality automatically based on
+      // bandwidth, device and viewport. The IFrame API no longer supports
+      // forcing a quality level, so we optimize the embed instead of using
+      // deprecated quality-forcing calls.
       event.target.playVideo();
     }
 
