@@ -144,7 +144,7 @@
         <div class="hero__story-card">
           <p class="hero__story-kicker">Makeup & Henna Artistry</p>
           <h1 class="hero__title">
-            <span class="editorial-initial editorial-initial--hero">B</span>ridal
+            <span class="cookie-regular editorial-initial editorial-initial--hero">B</span>ridal
             Beauty,<br>
             Crafted for You.
           </h1>
@@ -164,7 +164,7 @@
         <div class="latest-header reveal">
           <div>
             <span class="section-header__kicker">Beauty · Art · Bridal</span>
-            <h2><span class="editorial-initial editorial-initial--heading">T</span>he Latest</h2>
+            <h2><span class="cookie-regular editorial-initial editorial-initial--heading">T</span>he Latest</h2>
           </div>
           <a href="portfolio.html" class="latest-header__link">Explore the portfolio <span aria-hidden="true">→</span></a>
         </div>
@@ -234,7 +234,7 @@
           </div>
 
           <div class="intro__content reveal-right">
-            <h2><span class="editorial-initial editorial-initial--heading">B</span>eauty Is Personal.<br>Your Artistry Should Be Too.</h2>
+            <h2><span class="cookie-regular editorial-initial editorial-initial--heading">B</span>eauty Is Personal.<br>Your Artistry Should Be Too.</h2>
             <p><span class="drop-cap">I</span>’m Afreen, a New Jersey–based makeup and henna artist specializing in bridal and occasion beauty.</p>
             <p>From soft, effortless glam to full bridal looks and intricate henna designs, I create each look around the person wearing it — your features, your style, your outfit, and your story.</p>
             <p>Whether you’re getting ready for your wedding day, a celebration, or simply want to feel your best — my goal is to make you feel confident, beautiful, and completely yourself.</p>
@@ -517,23 +517,34 @@
 
   <script src="js/main.js"></script>
     <script>
-      // Start the muted native hero video as soon as the browser permits autoplay.
+      // Native MP4 hero: autoplay, loop and fade the poster away once playback begins.
       document.addEventListener("DOMContentLoaded", function () {
         const heroVideo = document.querySelector(".hero__video");
+        const heroPoster = document.querySelector(".hero__poster");
+
         if (!heroVideo) return;
 
         heroVideo.muted = true;
         heroVideo.defaultMuted = true;
+        heroVideo.playsInline = true;
+
+        const hidePoster = () => {
+          if (heroPoster) heroPoster.classList.add("is-playing");
+        };
 
         const startVideo = () => {
           const playPromise = heroVideo.play();
-          if (playPromise && typeof playPromise.catch === "function") {
-            playPromise.catch(() => {});
+
+          if (playPromise && typeof playPromise.then === "function") {
+            playPromise.then(hidePoster).catch(() => {
+              // Keep the poster visible if autoplay is blocked.
+            });
           }
         };
 
-        startVideo();
+        heroVideo.addEventListener("playing", hidePoster, { once: true });
         heroVideo.addEventListener("canplay", startVideo, { once: true });
+        startVideo();
       });
     </script>
 </body>
