@@ -12,7 +12,9 @@
   <meta property="og:image" content="img/makeup/Four diverse brides in elegant bridal makeup and attire.jpg">
   <meta property="og:url" content="https://afreenfatima.com/portfolio">
   <meta property="og:type" content="website">
+  <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Send+Flowers&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/inner-editorial.css">
 </head>
 <body>
 
@@ -47,11 +49,11 @@
   <main>
 
     <!-- ─── PAGE HEADER ─── -->
-    <section style="padding-top: calc(var(--header-height) + var(--space-3xl)); padding-bottom: var(--space-lg); text-align: center;">
+    <section class="editorial-page-header">
       <div class="container">
-        <p class="label reveal">Portfolio</p>
-        <h1 class="reveal" style="margin-top: var(--space-sm);">The Artistry</h1>
-        <p class="reveal" style="color: var(--color-taupe-dark); margin-top: var(--space-sm); max-width: 550px; margin-left: auto; margin-right: auto;">A curated collection of bridal makeup looks and henna designs created for brides and clients across North New Jersey and NYC.</p>
+        <p class="label reveal">Portfolio · Makeup & Henna</p>
+        <h1 class="reveal"><span class="cookie-regular editorial-initial">T</span>he Artistry</h1>
+        <p class="reveal">A curated collection of bridal makeup looks and henna designs created for brides and clients across North New Jersey and NYC.</p>
         <div class="divider reveal"></div>
       </div>
     </section>
@@ -59,6 +61,15 @@
     <!-- ─── FILTER TABS ─── -->
     <section class="section" style="padding-top: 0;">
       <div class="container">
+        <div class="editorial-feature reveal">
+          <div class="editorial-feature__copy">
+            <p class="editorial-feature__meta">The Portfolio Edit</p>
+            <h2><span class="cookie-regular editorial-initial">W</span>here beauty meets intention.</h2>
+            <p>Bridal transformations, occasion makeup, and intricate henna — photographed as part of the artistry, not just the final result.</p>
+          </div>
+          <p class="editorial-feature__side">Explore by category to see the different sides of Afreen's work, from polished makeup to detailed mehndi.</p>
+        </div>
+
         <div class="filter-tabs reveal">
           <button class="filter-tab active" data-filter="all">All</button>
           <button class="filter-tab" data-filter="makeup">Makeup</button>
@@ -69,7 +80,7 @@
         </div>
 
         <!-- ─── MASONRY GALLERY ─── -->
-        <div class="gallery-grid gallery-grid--asymmetric">
+        <div class="gallery-grid gallery-grid--asymmetric portfolio-editorial-grid">
 
           <!-- Bridal / Makeup -->
           <div class="gallery-item gallery-item--wide gallery-item--tall" data-category="bridal">
@@ -150,7 +161,7 @@
       <div class="container">
         <div class="cta-banner cta-banner--dark reveal">
           <p class="label" style="color: var(--color-champagne);">Like What You See?</p>
-          <h2 style="color: var(--color-warm-white);">Let's Create Your Look</h2>
+          <h2 style="color: var(--color-warm-white);"><span class="cookie-regular editorial-initial">L</span>et's Create Your Look</h2>
           <p style="color: var(--color-champagne-light);">Every look is personalized. Inquire to discuss your vision.</p>
           <a href="contact.html" class="btn btn--light">Book Now</a>
         </div>
