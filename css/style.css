@@ -1,10 +1,16 @@
+.cookie-regular {
+  font-family: "Cookie", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* ===================================================================
    AFREEN FATIMA — Bridal Makeup & Henna Artist
    Design System + Complete Styles
    =================================================================== */
 
 /* ───────────────────── Google Fonts ───────────────────── */
-/* Cormorant Garamond loaded via @import; Libre Franklin loaded via <link> in HTML */
+/*  loaded via @import; Libre Franklin loaded via <link> in HTML */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');
 
 /* ───────────────────── CSS Custom Properties ───────────────────── */
@@ -22,9 +28,9 @@
   --color-overlay-light: rgba(33, 27, 24, 0.30);
 
   /* Typography */
-  --font-heading: 'Cormorant Garamond', 'Georgia', serif;
-  --font-body: 'Libre Franklin', 'Helvetica Neue', Arial, sans-serif;
-  --font-accent: 'Libre Franklin', 'Helvetica Neue', Arial, sans-serif;
+  --font-heading: "Libre Franklin", sans-sans-serif;
+  --font-body: "Libre Franklin", sans-sans-serif;
+  --font-accent: "Libre Franklin", sans-sans-serif;
 
   /* Spacing */
   --space-xs: 0.5rem;
@@ -171,11 +177,10 @@ h4 {
 }
 
 .editorial-initial {
-  font-family: var(--font-accent);
-  font-optical-sizing: auto;
-  font-weight: 800;
+  font-family: "Cookie", cursive;
+  font-weight: 400;
   font-style: normal;
-  letter-spacing: -0.06em;
+  letter-spacing: 0;
   color: var(--color-espresso);
 }
 
@@ -1985,4 +1990,10 @@ h4 {
     color: #000;
     background: #fff;
   }
+}
+
+
+.hero__poster.is-playing {
+  opacity: 0;
+  pointer-events: none;
 }
