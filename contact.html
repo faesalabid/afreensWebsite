@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Bridal Makeup & Henna in Paterson, Clifton, Wayne NJ | Afreen Fatima</title>
+  <meta name="description" content="Book your bridal makeup or henna appointment with Afreen Fatima. Serving Paterson, Clifton, Wayne, Totowa, Haledon, Garfield, and all of North New Jersey & NYC. Fill out the inquiry form to get started.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://afreenfatima.com/contact">
+  <meta property="og:title" content="Book Now — Afreen Fatima | Bridal Makeup & Henna Artist">
+  <meta property="og:description" content="Inquire about bridal makeup and henna services in North New Jersey and NYC.">
+  <meta property="og:url" content="https://afreenfatima.com/contact">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ─── HEADER ─── -->
+  <header class="header header--dark" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">Afreen Fatima</a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="makeup.html" class="nav__link">Makeup</a>
+        <a href="henna.html" class="nav__link">Henna</a>
+        <a href="portfolio.html" class="nav__link">Portfolio</a>
+        <a href="about.html" class="nav__link">About</a>
+        <a href="reviews.html" class="nav__link">Reviews</a>
+      </nav>
+      <a href="contact.html" class="header__book">Book Now</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="index.html" class="mobile-nav__link">Home</a>
+    <a href="makeup.html" class="mobile-nav__link">Makeup</a>
+    <a href="henna.html" class="mobile-nav__link">Henna</a>
+    <a href="portfolio.html" class="mobile-nav__link">Portfolio</a>
+    <a href="about.html" class="mobile-nav__link">About</a>
+    <a href="reviews.html" class="mobile-nav__link">Reviews</a>
+    <a href="contact.html" class="btn btn--filled mobile-nav__book">Book Now</a>
+  </div>
+
+  <main>
+
+    <!-- ─── PAGE HEADER ─── -->
+    <section style="padding-top: calc(var(--header-height) + var(--space-3xl)); padding-bottom: var(--space-lg); text-align: center;">
+      <div class="container container--narrow">
+        <p class="label reveal">Booking</p>
+        <h1 class="reveal" style="margin-top: var(--space-sm);">Let's Create Your Look.</h1>
+        <p class="reveal" style="color: var(--color-taupe-dark); margin-top: var(--space-sm); max-width: 550px; margin-left: auto; margin-right: auto;">Tell me a little about your event and I'll get back to you with availability and next steps. Serving Paterson, Clifton, Wayne, Totowa, Haledon, Garfield, and all of North NJ & NYC.</p>
+        <div class="divider reveal"></div>
+      </div>
+    </section>
+
+    <!-- ─── BOOKING FORM ─── -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container container--narrow">
+        <form id="booking-form" class="reveal" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+          <div class="form-grid">
+            <!-- Name -->
+            <div class="form-group">
+              <label for="name">Name *</label>
+              <input type="text" id="name" name="name" placeholder="Your full name" required>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required>
+            </div>
+
+            <!-- Phone -->
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890">
+            </div>
+
+            <!-- Event Date -->
+            <div class="form-group">
+              <label for="event-date">Event Date</label>
+              <input type="date" id="event-date" name="event_date">
+            </div>
+
+            <!-- Event Location -->
+            <div class="form-group">
+              <label for="location">Event Location</label>
+              <input type="text" id="location" name="location" placeholder="Venue name or city">
+            </div>
+
+            <!-- Number of People -->
+            <div class="form-group">
+              <label for="people">Number of People</label>
+              <input type="number" id="people" name="number_of_people" placeholder="1" min="1">
+            </div>
+
+            <!-- Service -->
+            <div class="form-group">
+              <label for="service">Service *</label>
+              <select id="service" name="service" required>
+                <option value="" disabled selected>Select a service</option>
+                <option value="bridal-makeup">Bridal Makeup</option>
+                <option value="party-makeup">Party / Occasion Makeup</option>
+                <option value="bridal-henna">Bridal Henna</option>
+                <option value="party-henna">Party / Event Henna</option>
+                <option value="makeup-and-henna">Makeup + Henna</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <!-- Event Type -->
+            <div class="form-group">
+              <label for="event-type">Event Type</label>
+              <select id="event-type" name="event_type">
+                <option value="" disabled selected>Select event type</option>
+                <option value="wedding">Wedding</option>
+                <option value="engagement">Engagement</option>
+                <option value="eid">Eid</option>
+                <option value="party">Party</option>
+                <option value="photoshoot">Photoshoot</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <!-- Vision / Message -->
+            <div class="form-group form-group--full">
+              <label for="message">Tell Me About Your Vision</label>
+              <textarea id="message" name="message" placeholder="Describe the look you're imagining, any inspiration, or details about your event..."></textarea>
+            </div>
+
+            <!-- Instagram -->
+            <div class="form-group form-group--full">
+              <label for="instagram">Instagram Handle</label>
+              <input type="text" id="instagram" name="instagram" placeholder="@yourhandle">
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <div class="form-submit">
+            <button type="submit" class="btn btn--filled" style="width: 100%;">Submit Inquiry</button>
+          </div>
+
+          <!-- Form Message -->
+          <div class="form-message" id="form-message"></div>
+
+        </form>
+      </div>
+    </section>
+
+    <!-- ─── CONTACT INFO ─── -->
+    <section class="section section--ivory">
+      <div class="container container--narrow" style="text-align: center;">
+        <div class="reveal">
+          <p class="label">Other Ways to Reach Me</p>
+          <h2 style="margin-top: var(--space-sm);">Let's Connect</h2>
+          <div class="divider"></div>
+
+          <div style="margin-top: var(--space-lg); display: flex; justify-content: center; gap: var(--space-xl); flex-wrap: wrap;">
+            <div>
+              <p class="label" style="margin-bottom: 0.5rem;">Makeup</p>
+              <a href="https://www.instagram.com/mua_afreenfatima/" target="_blank" rel="noopener noreferrer" style="font-family: var(--font-heading); font-size: 1.3rem; color: var(--color-espresso);">@mua_afreenfatima</a>
+            </div>
+            <div>
+              <p class="label" style="margin-bottom: 0.5rem;">Henna</p>
+              <a href="https://www.instagram.com/afreens.henna/" target="_blank" rel="noopener noreferrer" style="font-family: var(--font-heading); font-size: 1.3rem; color: var(--color-espresso);">@afreens.henna</a>
+            </div>
+          </div>
+
+          <p style="margin-top: var(--space-lg); color: var(--color-taupe-dark); font-size: 0.9rem;">Based in North New Jersey · Serving NJ, NYC & Travel Available</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <p class="footer__brand">Afreen Fatima</p>
+          <p class="footer__tagline">Makeup & Henna Artistry</p>
+          <p class="footer__location">North New Jersey · NYC · Travel Available</p>
+        </div>
+        <div>
+          <p class="footer__heading">Navigate</p>
+          <div class="footer__links">
+            <a href="makeup.html" class="footer__link">Makeup</a>
+            <a href="henna.html" class="footer__link">Henna</a>
+            <a href="portfolio.html" class="footer__link">Portfolio</a>
+            <a href="about.html" class="footer__link">About</a>
+            <a href="reviews.html" class="footer__link">Reviews</a>
+            <a href="contact.html" class="footer__link">Book Now</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer__heading">Connect</p>
+          <div class="footer__social">
+            <a href="https://www.instagram.com/mua_afreenfatima/" target="_blank" rel="noopener noreferrer" class="footer__social-link">@mua_afreenfatima</a>
+          </div>
+          <div class="footer__social" style="margin-top: 0.75rem;">
+            <a href="https://www.instagram.com/afreens.henna/" target="_blank" rel="noopener noreferrer" class="footer__social-link">@afreens.henna</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2026 Afreen Fatima. All rights reserved.</p>
+        <p class="footer__credit"><em>Bridal Makeup & Henna Artist — Paterson, Clifton, Wayne, Totowa, Haledon, Garfield NJ</em></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
