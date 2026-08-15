@@ -68,7 +68,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Send+Flowers&display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.css">
@@ -113,12 +113,22 @@
 
     <!-- ─── HERO ─── -->
     <section class="hero" id="hero">
-      <!-- YouTube Video Background -->
+      <!-- Native looping hero video -->
       <div class="hero__video-wrap" aria-hidden="true">
-        <div id="hero-yt-player"></div>
+        <video
+          class="hero__video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          poster="img/makeup/Four diverse brides in elegant bridal makeup and attire.jpg"
+        >
+          <source src="img/makeup/0815.mp4" type="video/mp4">
+        </video>
       </div>
 
-      <!-- Poster fallback (shown until video plays) -->
+      <!-- Poster fallback -->
       <img
         src="img/makeup/Four diverse brides in elegant bridal makeup and attire.jpg"
         alt="Four beautiful brides showcasing diverse bridal makeup styles — South Asian bridal glam, classic Western bridal beauty, and elegant occasion makeup by Afreen Fatima, bridal makeup artist in Wayne, Totowa, and North NJ"
@@ -506,80 +516,25 @@
   </div>
 
   <script src="js/main.js"></script>
+    <script>
+      // Start the muted native hero video as soon as the browser permits autoplay.
+      document.addEventListener("DOMContentLoaded", function () {
+        const heroVideo = document.querySelector(".hero__video");
+        if (!heroVideo) return;
 
-  <!-- YouTube IFrame API for Hero Video Background -->
-  <script>
-    // Load YouTube IFrame API
-    var tag = document.createElement('script');
-    tag.src = 'https://www.youtube.com/iframe_api';
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        heroVideo.muted = true;
+        heroVideo.defaultMuted = true;
 
-    var heroPlayer;
-    var HERO_START = 58;  // 0:58
-    var HERO_END = 91;    // 1:31
-    var loopCheckInterval;
-
-    function onYouTubeIframeAPIReady() {
-      heroPlayer = new YT.Player('hero-yt-player', {
-        videoId: '8hDBYQJw-L0',
-        playerVars: {
-          autoplay: 1,
-          mute: 1,
-          controls: 0,
-          showinfo: 0,
-          rel: 0,
-          iv_load_policy: 3,
-          modestbranding: 1,
-          disablekb: 1,
-          fs: 0,
-          playsinline: 1,
-          origin: window.location.origin,
-          start: HERO_START,
-          loop: 0
-        },
-        events: {
-          onReady: onHeroPlayerReady,
-          onStateChange: onHeroPlayerStateChange
-        }
-      });
-    }
-
-    function onHeroPlayerReady(event) {
-      event.target.mute();
-      event.target.seekTo(HERO_START, true);
-
-      // YouTube now selects playback quality automatically based on
-      // bandwidth, device and viewport. The IFrame API no longer supports
-      // forcing a quality level, so we optimize the embed instead of using
-      // deprecated quality-forcing calls.
-      event.target.playVideo();
-    }
-
-    function onHeroPlayerStateChange(event) {
-      if (event.data === YT.PlayerState.PLAYING) {
-        // Fade out poster image
-        var poster = document.querySelector('.hero__poster');
-        if (poster) poster.style.opacity = '0';
-
-        // Start loop check
-        clearInterval(loopCheckInterval);
-        loopCheckInterval = setInterval(function() {
-          if (heroPlayer && heroPlayer.getCurrentTime) {
-            var currentTime = heroPlayer.getCurrentTime();
-            if (currentTime >= HERO_END || currentTime < HERO_START) {
-              heroPlayer.seekTo(HERO_START, true);
-            }
+        const startVideo = () => {
+          const playPromise = heroVideo.play();
+          if (playPromise && typeof playPromise.catch === "function") {
+            playPromise.catch(() => {});
           }
-        }, 200);
-      }
+        };
 
-      // If video ends or pauses unexpectedly, restart
-      if (event.data === YT.PlayerState.ENDED) {
-        heroPlayer.seekTo(HERO_START, true);
-        heroPlayer.playVideo();
-      }
-    }
-  </script>
+        startVideo();
+        heroVideo.addEventListener("canplay", startVideo, { once: true });
+      });
+    </script>
 </body>
 </html>
