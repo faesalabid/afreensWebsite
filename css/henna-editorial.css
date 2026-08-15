@@ -1,0 +1,42 @@
+/* Afreen Fatima — Henna page editorial additions */
+.henna-hero .hero__bg {
+  object-position: center 28%;
+  transform: scaleX(-1);
+}
+
+.henna-editorial-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(260px, .85fr);
+  gap: clamp(2rem, 7vw, 7rem);
+  align-items: end;
+  padding: 0 0 var(--space-xl);
+  margin-bottom: var(--space-lg);
+  border-bottom: 1px solid rgba(181, 167, 156, .45);
+}
+
+.henna-editorial-intro h3 {
+  font-family: var(--font-heading);
+  font-weight: 300;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1;
+  letter-spacing: -.04em;
+  margin-top: .65rem;
+}
+
+.henna-editorial-intro > p {
+  max-width: 460px;
+  font-size: .85rem;
+  line-height: 1.8;
+  color: var(--color-espresso-light);
+}
+
+.henna-hero .hero__story-card {
+  max-width: 650px;
+}
+
+@media (max-width: 768px) {
+  .henna-editorial-intro {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
