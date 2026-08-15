@@ -793,6 +793,9 @@ h4 {
   font-size: clamp(2.2rem, 5.5vw, 4rem);
 }
 
+.makeup-hero .hero__bg {
+  transform: scaleX(-1);
+}
 /* ───────────────────── The Latest / Editorial Cards ───────────────────── */
 .latest-section {
   background: var(--color-warm-white);
